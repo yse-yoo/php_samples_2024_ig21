@@ -34,12 +34,12 @@ $users = [
     <title>Document</title>
 
     <script>
-    // JavaScript
-    // users =[
-    //     {'id': 1, name: 'Alice'},   
-    //     {'id': 2, name: 'Bob'},   
-    //     {'id': 3, name: 'Chris'},   
-    // ];
+        // JavaScript
+        // users =[
+        //     {'id': 1, name: 'Alice'},   
+        //     {'id': 2, name: 'Bob'},   
+        //     {'id': 3, name: 'Chris'},   
+        // ];
     </script>
 </head>
 
@@ -63,7 +63,25 @@ $users = [
 
     <!-- $users のデータを id name email を Tableタグで一覧表示 -->
     <div class="user-list">
-
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>name</th>
+                    <th>email</th>
+                </tr>
+            </thead>
+            <!-- ユーザ繰り返し -->
+            <tbody>
+                <?php foreach ($users as $user) : ?>
+                    <tr>
+                        <td><?= $user['id'] ?></td>
+                        <td><?= $user['name'] ?></td>
+                        <td><?= $user['email'] ?></td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
     </div>
 
     <!-- id = item-list の divを入力 -->
