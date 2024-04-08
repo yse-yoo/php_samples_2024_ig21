@@ -16,6 +16,13 @@ $drinks = ["コーヒー", "紅茶", "ほうじ茶",];
 // Debug関数
 // var_dump($drinks);
 
+$users = [
+    ['id' => 1, 'name' => 'Alice'],
+    ['id' => 2, 'name' => 'Bob'],
+    ['id' => 3, 'name' => 'Chris'],
+];
+// var_dump($users);
+
 ?>
 
 <!DOCTYPE html>
@@ -25,6 +32,15 @@ $drinks = ["コーヒー", "紅茶", "ほうじ茶",];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script>
+    // JavaScript
+    // users =[
+    //     {'id': 1, name: 'Alice'},   
+    //     {'id': 2, name: 'Bob'},   
+    //     {'id': 3, name: 'Chris'},   
+    // ];
+    </script>
 </head>
 
 <body>
