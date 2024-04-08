@@ -17,9 +17,9 @@ $drinks = ["コーヒー", "紅茶", "ほうじ茶",];
 // var_dump($drinks);
 
 $users = [
-    ['id' => 1, 'name' => 'Alice'],
-    ['id' => 2, 'name' => 'Bob'],
-    ['id' => 3, 'name' => 'Chris'],
+    ['id' => 1, 'name' => 'Alice', 'email' => 'alice@test.com'],
+    ['id' => 2, 'name' => 'Bob', 'email' => 'bob@tet.com'],
+    ['id' => 3, 'name' => 'Chris', 'email' => 'chris@test.com'],
 ];
 // var_dump($users);
 
@@ -61,15 +61,9 @@ $users = [
     <?php endif ?>
 
 
-    <!-- ul li タグで liが class="item" ３つリストを作ってください -->
-    <div class="list">
-        <ul>
-            <!-- li.item -->
-            <!-- .（ピリオド）: Web開発　= class -->
-            <li class="item">1</li>
-            <li class="item">2</li>
-            <li class="item">3</li>
-        </ul>
+    <!-- $users のデータを id name email を Tableタグで一覧表示 -->
+    <div class="user-list">
+
     </div>
 
     <!-- id = item-list の divを入力 -->
