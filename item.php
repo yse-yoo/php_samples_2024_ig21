@@ -11,7 +11,7 @@ $title = "Top Page";
 // Shift + Option + F macOS
 
 // Array（配列）
-$drinks = ["コーヒー", "紅茶", "ほうじ茶"];
+$drinks = ["コーヒー", "紅茶", "ほうじ茶",];
 // echo $drinks;
 // Debug関数
 // var_dump($drinks);
@@ -34,13 +34,15 @@ $drinks = ["コーヒー", "紅茶", "ほうじ茶"];
     <!-- <h1><?php echo $title ?></h1> -->
     <h1><?= $title ?></h1>
     <!-- ul li タグで３つリストを作ってください -->
-    <ul>
-        <?php if ($drinks) : ?>
+    <!-- $drinksデータの判別 -->
+    <?php if ($drinks) : ?>
+        <ul>
+            <!-- $drinks データの繰り返し  -->
             <?php foreach ($drinks as $key => $drink) : ?>
                 <li><?= $drink ?></li>
             <?php endforeach ?>
-        <?php endif ?>
-    </ul>
+        </ul>
+    <?php endif ?>
 
 
     <!-- ul li タグで liが class="item" ３つリストを作ってください -->
