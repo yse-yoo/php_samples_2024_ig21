@@ -11,6 +11,11 @@ $title = "Top Page";
 // Shift + Option + F macOS
 
 // Array（配列）
+$drinks = ["コーヒー", "紅茶", "ほうじ茶"];
+// echo $drinks;
+// Debug関数
+// var_dump($drinks);
+
 ?>
 
 <!DOCTYPE html>
@@ -25,15 +30,11 @@ $title = "Top Page";
 <body>
     <!-- formatter -->
     <!-- h1タグでTop Page -->
-    <h1><?php print($title) ?></h1>
-    <h1><?php echo $title ?></h1>
+    <!-- <h1><?php print($title) ?></h1> -->
+    <!-- <h1><?php echo $title ?></h1> -->
     <h1><?= $title ?></h1>
     <!-- ul li タグで３つリストを作ってください -->
-    <ul>
-        <li>コーヒー</li>
-        <li>紅茶</li>
-        <li>ほうじ茶</li>
-    </ul>
+
 
     <!-- ul li タグで liが class="item" ３つリストを作ってください -->
     <div class="list">
