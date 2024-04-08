@@ -34,6 +34,13 @@ $drinks = ["コーヒー", "紅茶", "ほうじ茶"];
     <!-- <h1><?php echo $title ?></h1> -->
     <h1><?= $title ?></h1>
     <!-- ul li タグで３つリストを作ってください -->
+    <ul>
+        <?php if ($drinks) : ?>
+            <?php foreach ($drinks as $key => $drink) : ?>
+                <li><?= $drink ?></li>
+            <?php endforeach ?>
+        <?php endif ?>
+    </ul>
 
 
     <!-- ul li タグで liが class="item" ３つリストを作ってください -->
