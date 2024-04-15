@@ -33,8 +33,10 @@ try {
 
 if (isset($_GET['q'])) {
     $keyword = $_GET['q'];
-    $sql = "SELECT * FROM users WHERE name LIKE '%{$keyword}%' OR email LIKE '%{$keyword}%';";
-} else {
+
+} else {    $sql = "SELECT * FROM users 
+                    WHERE name LIKE '%{$keyword}%' 
+                    OR email LIKE '%{$keyword}%';";
     $sql = "SELECT * FROM users;";
 }
 
