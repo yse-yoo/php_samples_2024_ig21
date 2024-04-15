@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>日曜日から土曜日までの表示</title>
+</head>
+
+<body>
+    <div id="daysOfWeek"></div>
+    <script>
+        // 曜日の配列
+        const days = ["日", "月", "火", "水", "木", "金", "土"];
+
+        // 現在の日付を取得
+        const currentDate = new Date();
+
+        // 日曜日から土曜日までの日付を表示
+        for (let i = 0; i < 7; i++) {
+            const date = new Date(currentDate);
+            date.setDate(currentDate.getDate() + i - currentDate.getDay());
+            document.getElementById("daysOfWeek").innerHTML += `<p>${date.toLocaleDateString()}（${days[date.getDay()]}）</p>`;
+        }
+    </script>
+</body>
+
+</html>
