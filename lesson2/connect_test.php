@@ -23,8 +23,11 @@ try {
 }
 
 $sql = "SELECT * FROM users;";
+// SQLの実行
 $stmt = $pdo->query($sql);
 // var_dump($stmt);
+// ユーザ情報をオブジェクトに変換
+$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
