@@ -33,7 +33,7 @@ try {
 
 if (isset($_GET['q'])) {
     $keyword = $_GET['q'];
-    $sql = "SELECT * FROM users WHERE name LIKE '%{$keyword}%';";
+    $sql = "SELECT * FROM users WHERE name LIKE '%{$keyword}%' OR email LIKE '%{$keyword}%';";
 } else {
     $sql = "SELECT * FROM users;";
 }
@@ -72,6 +72,7 @@ $genders['female'] = "女性";
             <form action="connect_test.php" method="get">
                 <input type="text" class="form-control" name="q" value="<?= @$keyword ?>">
                 <button class="btn btn-primary">検索</button>
+                <a href="connect_test.php" class="btn btn-outline-primary">リセット</a>
             </form>
         </div>
 
