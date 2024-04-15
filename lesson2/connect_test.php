@@ -22,7 +22,22 @@ try {
     exit;
 }
 
-$sql = "SELECT * FROM users;";
+//スーパーグローバル変数
+// GET: $_GET
+// POST: $_POST
+// REQUEST: $_REQUEST
+//
+// Session: $_SESSION
+// Server: $_SERVER
+// File: $_FILES
+
+if (isset($_GET['q'])) {
+    $keyword = $_GET['q'];
+    $sql = "SELECT * FROM users WHERE name LIKE '%{$keyword}%';";
+} else {
+    $sql = "SELECT * FROM users;";
+}
+
 // SQLの実行
 $stmt = $pdo->query($sql);
 // var_dump($stmt);
@@ -51,6 +66,14 @@ $genders['female'] = "女性";
         <h2>接続成功</h2>
         <h3>SQL</h3>
         <p><?= $stmt->queryString ?></p>
+
+        <div class="mt-3 mb-3">
+            <h3>検索</h3>
+            <form action="connect_test.php" method="get">
+                <input type="text" class="form-control" name="q" value="<?= @$keyword ?>">
+                <button class="btn btn-primary">検索</button>
+            </form>
+        </div>
 
         <h3>ユーザリスト</h3>
         <table class="table">
