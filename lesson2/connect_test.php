@@ -26,8 +26,11 @@ $sql = "SELECT * FROM users;";
 // SQLの実行
 $stmt = $pdo->query($sql);
 // var_dump($stmt);
-// ユーザ情報をオブジェクトに変換
+// ユーザレコードをオブジェクトに変換
 $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+$genders['male'] = "男性";
+$genders['female'] = "女性";
 ?>
 
 <!DOCTYPE html>
@@ -37,23 +40,38 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
 <body>
-    <h2>接続成功</h2>
-    <h3>SQL</h3>
-    <p><?= $stmt->queryString ?></p>
+    <div class="container">
+        <h2>接続成功</h2>
+        <h3>SQL</h3>
+        <p><?= $stmt->queryString ?></p>
 
-    <h3>ユーザリスト</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-            </tr>
-        </thead>
-    </table>
+        <h3>ユーザリスト</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                </tr>
+            </thead>
+            <!-- ユーザ繰り返し -->
+            <tbody>
+                <?php foreach ($users as $user) : ?>
+                    <tr>
+                        <td><?= $user['id'] ?></td>
+                        <td><?= $user['name'] ?></td>
+                        <td><?= $user['email'] ?></td>
+                        <td><?= $genders[$user['gender']] ?></td>
+                    </tr>
+                <?php endforeach ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>
