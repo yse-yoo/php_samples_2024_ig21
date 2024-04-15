@@ -27,7 +27,10 @@ $sql = "SELECT * FROM users;";
 $stmt = $pdo->query($sql);
 // var_dump($stmt);
 // ユーザレコードをオブジェクトに変換
-$users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $users[] = $row;
+}
 
 $genders['male'] = "男性";
 $genders['female'] = "女性";
